@@ -1,0 +1,37 @@
+
+
+/* Header */
+.navbar-default .navbar-brand {
+	color: #000;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+#title {
+	background-color: #4D2C0D;
+}
+#title button {
+	background-color: #ccc;
+}
+#title button:hover {
+	background-color: #ababab;
+}
+
+#navigation-menu li > a {
+	color: #7DB500;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.3em;
+}
+#navigation-menu li > a:hover {
+	background-color: #281B0F;
+}
+/* Header end */
+
+/* Main Page */
+.row section {
+	background-color: #1C0D35;
+	height: 1000px;
+	color: #fff;
+}
+/* Main Page end*/
