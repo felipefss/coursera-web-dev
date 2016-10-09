@@ -1,5 +1,3 @@
-
-
 /* Header */
 .navbar-default .navbar-brand {
 	color: #FFF;
@@ -29,9 +27,20 @@
 /* Header end */
 
 /* Main Page */
-.row section {
+#main-content {
+	margin: 20px auto;
+}
+.row .section {
 	background-color: #1C0D35;
-	height: 1000px;
 	color: #fff;
+	padding: 15px;
+	margin-bottom: 15px;
+}
+.row .section a {
+	/*background-color: #aaa;*/
+	color: yellow;
+}
+.row .section h3 {
+	margin-top: 0;
 }
 /* Main Page end*/
