@@ -1,0 +1,20 @@
+<ul>
+    <li ng-repeat="item in list.items">
+        <table>
+            <tr>
+                <td><strong>Name</strong>: {{item.name}}</td>
+                <td rowspan="3">
+                    <button type="button" class="btn btn-success" ng-click="list.onRemove({ index: $index })">
+                        Don't want this one!
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Short Name</strong>: {{item.short_name}}</td>
+            </tr>
+            <tr>
+                <td><strong>Description</strong>: {{item.description}}</td>
+            </tr>
+        </table>
+    </li>
+</ul>
