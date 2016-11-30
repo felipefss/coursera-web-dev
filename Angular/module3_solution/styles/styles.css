@@ -54,3 +54,8 @@ input[type="text"] {
 td {
     width: 15%;
 }
+
+.error {
+  color: #F00;
+  font-weight: bold;
+}

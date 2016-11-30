@@ -22,16 +22,22 @@
         return ddo;
     }
 
-    function FoundItemsDirectiveController() {}
+    function FoundItemsDirectiveController() {
+      var list = this;
+
+      list.emptyList = function() {
+        return list.items ? list.items.length === 0 : false;
+      };
+    }
 
     NarrowItDownController.$inject = ['MenuSearchService'];
     function NarrowItDownController(MenuSearchService) {
         var search = this;
 
         search.narrowItDown = function() {
-            if (search.searchTerm.length === 0) {
-                //'Nothing found'
-            } else {
+            if (!search.searchTerm) {
+              search.found = [];
+            } else if (search.searchTerm.length > 0) {
                 MenuSearchService.getMatchedMenuItems(search.searchTerm)
                 .then(function(result) {
                     search.found = result;
