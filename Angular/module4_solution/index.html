@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Module 4 solution</title>
+    </head>
+    <body ng-app="MenuApp">
+        <h2>Welcome to our Restaurant</h2>
+
+        <ui-view></ui-view>
+
+        <!-- Angular libraries -->
+        <script src="lib/angular.min.js" charset="utf-8"></script>
+        <script src="lib/angular-ui-router.min.js" charset="utf-8"></script>
+
+        <!-- Modules -->
+        <script src="src/menuapp.module.js" charset="utf-8"></script>
+        <script src="src/data.module.js" charset="utf-8"></script>
+
+        <!-- 'data' module's Artifacts -->
+        <script src="src/categories.controller.js" charset="utf-8"></script>
+        <script src="src/items.controller.js" charset="utf-8"></script>
+        <script src="src/routes.js" charset="utf-8"></script>
+        <script src="src/menudata.service.js" charset="utf-8"></script>
+        <script src="src/items.component.js" charset="utf-8"></script>
+        <script src="src/categories.component.js" charset="utf-8"></script>
+    </body>
+</html>
