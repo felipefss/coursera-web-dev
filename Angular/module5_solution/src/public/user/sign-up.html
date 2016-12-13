@@ -1,0 +1,53 @@
+<div class="container">
+  <h2 class="text-center">Sign Up for Newsletter</h2>
+
+  <form name="signUpForm" novalidate>
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" class="form-control" name="firstName" placeholder="First Name"
+        ng-model="signUpCtrl.firstName"
+        required>
+        <p ng-if="signUpForm.firstName.$invalid && signUpForm.firstName.$touched">
+          You must enter your first name.
+        </p>
+
+      <label for="lastName">Last Name</label>
+      <input type="text" class="form-control" name="lastName" placeholder="Last Name"
+        ng-model="signUpCtrl.lastName"
+        required>
+        <p ng-if="signUpForm.lastName.$invalid && signUpForm.lastName.$touched">
+          You must enter your last name.
+        </p>
+
+      <label for="email">E-mail Address</label>
+      <input type="email" class="form-control" name="email" placeholder="E-mail address"
+        ng-model="signUpCtrl.email"
+        required>
+      <p ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">
+        Must be a valid email address.
+      </p>
+
+      <label for="phoneNumber">Phone Number</label>
+      <input type="text" class="form-control" name="phone" placeholder="E.g.: 333-222-5555"
+        ng-model="signUpCtrl.phone"
+        pattern="(\d{3})-(\d{3})-(\d{4})">
+      <p ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">
+        Phone must be in the format ###-###-####
+      </p>
+
+      <label for="favorite">Favorite Dish (Menu Number)</label>
+      <input type="text" class="form-control" name="favorite" placeholder="E.g.: L1 (Uppercase only)"
+        ng-model="signUpCtrl.favorite"
+        required>
+      <p ng-if="signUpForm.favorite.$invalid && signUpForm.favorite.$touched">
+        You must enter a favorite dish.
+      </p>
+      <p ng-if="signUpCtrl.gotRes === false">No such menu number exists.</p>
+
+      <button type="button" class="btn btn-default" ng-disabled="signUpForm.$invalid"
+        ng-click="signUpCtrl.submitForm()">Submit</button>
+    </div>
+  </form>
+
+  <div class="label label-success" role="alert" ng-if="signUpCtrl.gotRes">Your information has been saved.</div>
+</div>

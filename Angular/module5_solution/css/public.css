@@ -113,6 +113,14 @@ h3.menu-item-title {
 }
 /* END SINGLE CATEGORY PAGE */
 
+/* SIGN UP PAGE */
+input.ng-invalid.ng-touched {
+  background-color: #f2dede;
+  color: #a94442;
+  border-color: #f00;
+}
+/* END SIGN UP PAGE */
+
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {
