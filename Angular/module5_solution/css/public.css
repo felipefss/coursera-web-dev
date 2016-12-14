@@ -121,6 +121,12 @@ input.ng-invalid.ng-touched {
 }
 /* END SIGN UP PAGE */
 
+/* MY INFO PAGE */
+#myInfo {
+  color: #000;
+}
+/* END MY INFO PAGE */
+
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {

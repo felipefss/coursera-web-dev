@@ -1,0 +1,34 @@
+<div class="container">
+  <h2 class="text-center">My Info</h2>
+
+  <div ng-if="!myInfo.user.firstName">
+    <h3>Not Signed Up Yet.</h3>
+    <a ui-sref="public.signup" class="btn btn-lg btn-primary">
+      Sign Up Now!
+    </a>
+  </div>
+
+  <div ng-if="myInfo.user.firstName">
+    <div id="myInfo" class="col-md-6">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <strong>Name:</strong> {{::myInfo.user.firstName}} {{::myInfo.user.lastName}}
+        </li>
+        <li class="list-group-item">
+          <strong>E-mail:</strong> {{::myInfo.user.email}}
+        </li>
+        <li class="list-group-item" ng-if="myInfo.user.phone">
+          <strong>Phone:</strong> {{::myInfo.user.phone}}
+        </li>
+      </ul>
+    </div>
+
+    <div class="text-center col-md-6">
+      <h3>Favorite Dish</h3>
+      <div>{{::myInfo.user.favTitle}}</div>
+      <img class="img-responsive center-block" width="250" height="150"
+          ng-src="{{myInfo.basePath}}/images/{{myInfo.user.favorite}}.jpg" alt="{{myInfo.user.favTitle}}">
+      <div>{{::myInfo.user.favDescription}}</div>
+    </div>
+  </div>
+</div> <!-- ./container -->
