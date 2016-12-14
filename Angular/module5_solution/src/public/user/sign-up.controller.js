@@ -5,16 +5,11 @@
   SignUpController.$inject = ['UserService', 'MenuService'];
   function SignUpController(UserService, MenuService) {
     var signUpCtrl = this;
+    var user = {};
 
-    var getMenuSingleItem = function() {
-      return MenuService.getSingleItem(signUpCtrl.favorite).then(function (response) {
-        return response;
-      });
-    };
-
-    signUpCtrl.submitForm = function () {
-      getMenuSingleItem().then(function(response) {
-        var user = {
+    signUpCtrl.getMenuSingleItem = function() {
+      MenuService.getSingleItem(signUpCtrl.favorite).then(function(response) {
+        user = {
           firstName: signUpCtrl.firstName,
           lastName: signUpCtrl.lastName,
           email: signUpCtrl.email,
@@ -27,12 +22,16 @@
           user.phone = signUpCtrl.phone;
         }
 
-        UserService.saveUser(user);
-
         signUpCtrl.gotRes = true;
       }).catch(function(err) {
         signUpCtrl.gotRes = false;
       });
+    };
+
+    signUpCtrl.submitForm = function () {
+      UserService.saveUser(user);
+
+      signUpCtrl.OK = true;
     };
   }
 })();

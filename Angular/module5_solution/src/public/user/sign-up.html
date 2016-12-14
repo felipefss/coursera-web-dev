@@ -38,16 +38,17 @@
       <label for="favorite">Favorite Dish (Menu Number)</label>
       <input type="text" class="form-control" name="favorite" placeholder="E.g.: L1 (Uppercase only)"
         ng-model="signUpCtrl.favorite"
+        ng-blur="signUpCtrl.getMenuSingleItem()"
         required>
       <p ng-if="signUpForm.favorite.$invalid && signUpForm.favorite.$touched">
         You must enter a favorite dish.
       </p>
       <p ng-if="signUpCtrl.gotRes === false">No such menu number exists.</p>
 
-      <button type="button" class="btn btn-default" ng-disabled="signUpForm.$invalid"
+      <button type="button" class="btn btn-default" ng-disabled="signUpForm.$invalid || signUpCtrl.gotRes === false"
         ng-click="signUpCtrl.submitForm()">Submit</button>
     </div>
   </form>
 
-  <div class="label label-success" role="alert" ng-if="signUpCtrl.gotRes">Your information has been saved.</div>
+  <div class="label label-success" role="alert" ng-if="signUpCtrl.OK">Your information has been saved.</div>
 </div>
